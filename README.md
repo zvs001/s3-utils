@@ -17,8 +17,9 @@ const s3Client = new S3({}) // authorized s3 client
 s3Utils.deleteDir(s3Client, { ... })
 ```
 
-
-### Usage
+### API
+- [s3DeleteDir](https://github.com/zvs001/s3-utils#s3deletedir)
+- [s3SyncDir](https://github.com/zvs001/s3-utils#s3deletedir)
 
 #### s3DeleteDir
 
@@ -29,7 +30,7 @@ import s3Utils from '@zvs001/s3-utils'
 // import { s3DeleteDir } from '@zvs001/s3-utils' // named import
 
 await s3Utils.deleteDir(s3Client, {
-  Bucket: 'reaction-users',
+  Bucket: 'my-bucket',
   Prefix: `folder/`,
 })
 ```
