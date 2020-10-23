@@ -1,0 +1,28 @@
+{
+  "name": "@zvs001/s3-utils",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "prepack": "npx tsc --noEmit false",
+    "postpublish": "npm run clean",
+    "clean": "npx module-kit-clean"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zvs001/s3-utils.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zvs001/s3-utils/issues"
+  },
+  "homepage": "https://github.com/zvs001/s3-utils#readme",
+  "dependencies": {
+    "aws-sdk": "^2.777.0",
+    "invariant": "^2.2.4"
+  },
+  "devDependencies": {
+    "@zvs001/module-kit": "^0.0.1"
+  }
+}

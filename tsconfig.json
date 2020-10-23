@@ -1,0 +1,6 @@
+{
+  "extends": "@zvs001/module-kit/tsconfig",
+  "compilerOptions": {
+    "rootDir": "."
+  }
+}
