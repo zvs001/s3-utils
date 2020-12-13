@@ -6,7 +6,7 @@ import { S3ClientMinimal } from '../typings/aws'
 
 export async function s3SyncDir(
   s3: S3ClientMinimal, dirPath: string,
-  { bucket, bucketPath = '/' }: { bucket: string; bucketPath?: string},
+  { bucket, bucketPath = '' }: { bucket: string; bucketPath?: string},
 ) {
   invariant(bucket, 'syncDir: bucket param is required')
   const keys: string[] = []
