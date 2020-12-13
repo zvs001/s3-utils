@@ -1,6 +1,6 @@
 {
   "name": "@zvs001/s3-utils",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "",
   "main": "index.js",
   "scripts": {
