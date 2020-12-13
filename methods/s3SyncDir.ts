@@ -1,5 +1,6 @@
 import fs from 'fs'
 import path from 'path'
+import url from 'url'
 import invariant from 'invariant'
 import { S3ClientMinimal } from '../typings/aws'
 
@@ -13,7 +14,7 @@ export async function s3SyncDir(
   await recursiveWalk(dirPath, async filePath => {
     let objectPath = filePath
     const relativeFilePath = path.relative(dirPath, filePath)
-    const Key = path.join(bucketPath, relativeFilePath)
+    const Key = url.resolve(bucketPath, relativeFilePath)
     const params = { Bucket: bucket, Key, Body: fs.readFileSync(filePath) }
 
     try {

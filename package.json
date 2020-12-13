@@ -20,7 +20,8 @@
   "homepage": "https://github.com/zvs001/s3-utils#readme",
   "dependencies": {
     "aws-sdk": "^2.777.0",
-    "invariant": "^2.2.4"
+    "invariant": "^2.2.4",
+    "url": "^0.11.0"
   },
   "devDependencies": {
     "@zvs001/module-kit": "^0.0.1"
