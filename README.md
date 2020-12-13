@@ -2,6 +2,8 @@
 Library provides additional useful methods, 
 that doesn't exists in aws-sdk
 
+[![npm](https://img.shields.io/npm/v/@zvs001/s3-utils)](https://www.npmjs.com/package/@zvs001/s3-utils)
+
 ### Getting Started
 
 yarn: `yarn add @zvs001/s3-utils`
