@@ -10,11 +10,13 @@ yarn: `yarn add @zvs001/s3-utils`
 
 npm: `npm i -S @zvs001/s3-utils`
 
+Note: in case you want to work with aws-sdk v2, you should use v0.1.0
+
 ```typescript
 import s3Utils from '@zvs001/s3-utils'
-import { S3 } from 'aws-sdk'
+import { S3Client } from '@aws-sdk/client-s3'
 
-const s3Client = new S3({}) // authorized s3 client
+const s3Client = new S3Client()
 
 s3Utils.deleteDir(s3Client, { ... })
 ```

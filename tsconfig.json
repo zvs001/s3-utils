@@ -1,5 +1,5 @@
 {
-  "extends": "@zvs001/module-kit/tsconfig",
+  "extends": "module-kit/tsconfig",
   "compilerOptions": {
     "rootDir": "."
   }

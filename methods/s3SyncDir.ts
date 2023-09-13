@@ -1,11 +1,12 @@
 import fs from 'fs'
 import path from 'path'
 import url from 'url'
+import { PutObjectCommand, S3Client } from '@aws-sdk/client-s3'
 import invariant from 'invariant'
-import { S3ClientMinimal } from '../typings/aws'
 
 export async function s3SyncDir(
-  s3: S3ClientMinimal, dirPath: string,
+  s3Client: Pick<S3Client, 'send'>,
+  dirPath: string,
   { bucket, bucketPath = '' }: { bucket: string; bucketPath?: string},
 ) {
   invariant(bucket, 'syncDir: bucket param is required')
@@ -15,10 +16,16 @@ export async function s3SyncDir(
     let objectPath = filePath
     const relativeFilePath = path.relative(dirPath, filePath)
     const Key = url.resolve(bucketPath, relativeFilePath)
-    const params = { Bucket: bucket, Key, Body: fs.readFileSync(filePath) }
+
+    const Body = fs.readFileSync(filePath)
 
     try {
-      await s3.putObject(params).promise()
+      const command = new PutObjectCommand({
+        Bucket: bucket,
+        Key,
+        Body,
+      })
+      await s3Client.send(command)
       keys.push(Key)
       console.log(`Successfully uploaded ${objectPath} to s3 bucket`)
     } catch (error) {

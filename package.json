@@ -1,6 +1,6 @@
 {
   "name": "@zvs001/s3-utils",
-  "version": "0.1.0",
+  "version": "1.0.0-rc.1",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -19,11 +19,15 @@
   },
   "homepage": "https://github.com/zvs001/s3-utils#readme",
   "dependencies": {
-    "aws-sdk": "^2.777.0",
     "invariant": "^2.2.4",
-    "url": "^0.11.0"
+    "url": "^0.11.2"
   },
   "devDependencies": {
-    "@zvs001/module-kit": "^0.0.1"
+    "@aws-sdk/client-s3": "^3.412.0",
+    "module-kit": "^0.1.0",
+    "typescript": "^5.2.2"
+  },
+  "peerDependencies": {
+    "@aws-sdk/client-s3": "^3.400.0"
   }
 }
